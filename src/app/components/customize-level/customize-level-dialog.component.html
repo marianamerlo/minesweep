@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Custom Level</h1>
+<div mat-dialog-content>
+	<form [formGroup]="formGroup" (ngSubmit)="onSubmitClick()">
+		<mat-form-field>
+			<input matInput formControlName="cols"  type="number" placeholder="Columns" name="cols">
+		</mat-form-field>
+		<mat-form-field>
+			<input matInput formControlName="rows" type="number" placeholder="Rows" name="rows">
+		</mat-form-field>	
+		<mat-form-field>
+			<input matInput formControlName="mineNumber" type="number" placeholder="Mines" name="mineNumber">
+		</mat-form-field>
+	</form>
+</div>
+<div mat-dialog-actions align="end">
+	<button mat-button (click)="onCancelClick()">Cancel</button>
+	<button mat-button color="primary" type="submit" [disabled]="formGroup.invalid" [mat-dialog-close]="formGroup.value">Ok</button>
+</div>
